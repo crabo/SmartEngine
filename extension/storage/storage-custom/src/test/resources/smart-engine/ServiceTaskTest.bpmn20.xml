@@ -37,9 +37,10 @@
 
         <sequenceFlow id="flow5" sourceRef="theTask1" targetRef="selectTask"/>
 
-        <serviceTask id="theTask2" name="Task 2"
+        <scriptTask id="theTask2" name="Task 2"
                      smart:class="com.alibaba.smart.framework.engine.test.orchestration.ServiceOrchestrationJavaDelegation">
-        </serviceTask>
+            <script resultVariable="n1">println("hello world")</script>
+        </scriptTask>
 
         <sequenceFlow id="flow6" sourceRef="theTask2" targetRef="selectTask"/>
 

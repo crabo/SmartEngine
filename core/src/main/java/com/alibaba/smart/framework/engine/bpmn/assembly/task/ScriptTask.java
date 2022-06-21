@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * @author zilong.jiangzl 2020-07-17
+ * @author crabo 2022-06-20
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -17,6 +17,10 @@ public class ScriptTask extends AbstractTask {
 
     public final static QName qtype = new QName(BpmnNameSpaceConstant.NAME_SPACE, "scriptTask");
     private static final long serialVersionUID = 2155118199015424897L;
+
+    private String scriptFormat;
+    private String script;
+    private String resultVariable; //将script执行结果等级在此变量名
 
     @Override
     public String toString() {
