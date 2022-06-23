@@ -44,7 +44,7 @@ public class ScriptTaskParser extends AbstractBpmnParser<ScriptTask> {
             model.setScript(((ScriptText) child).getScript());
         }
 
-        return true;
+        return false;
     }
 
 }
