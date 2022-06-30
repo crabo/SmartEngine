@@ -42,7 +42,7 @@ public interface ProcessEngineConfiguration {
     InstanceAccessor getInstanceAccessor();
 
     /**
-     * 默认不需要扩展。默认使用MVEL表达式引擎。
+     * 默认不需要扩展。默认使用QlExpress表达式引擎。
      *
      * @param expressionEvaluator
      *

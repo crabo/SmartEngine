@@ -40,22 +40,9 @@
         </license>
     </licenses>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <name>OSS Snapshots Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <name>OSS Staging Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
-        <java.source.version>1.6</java.source.version>
-        <java.target.version>1.6</java.target.version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
         <java.file.encoding>UTF-8</java.file.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -75,12 +62,12 @@
 
         <module>extension/storage/storage-common</module>
         <module>extension/storage/storage-custom</module>
-        <module>extension/storage/storage-mysql</module>
+<!--        <module>extension/storage/storage-mysql</module>
         <module>extension/storage/storage-mongodb</module>
-        
+
         <module>extension/retry/retry-common</module>
         <module>extension/retry/retry-custom</module>
-        <module>extension/retry/retry-mysql</module>
+        <module>extension/retry/retry-mysql</module>-->
 
     </modules>
 
@@ -277,16 +264,6 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- 会被自动rename package -->
-            <!-- https://mvnrepository.com/artifact/org.mvel/mvel2 -->
-            <dependency>
-                <groupId>org.mvel</groupId>
-                <artifactId>mvel2</artifactId>
-                <version>2.4.4.Final</version>
-            </dependency>
-
-
-
             <!-- spring AOP 包 -->
 
             <dependency>
@@ -392,7 +369,6 @@
                         <includes>
                             <!-- 重要:!!!! 千万记得这个 artifact 的scope 不要设置为provided了,已经浪费至少2个小时了!!!!!-->
                             <include>com.esotericsoftware:reflectasm:shaded</include>
-                            <include>org.mvel:mvel2</include>
                         </includes>
                     </artifactSet>
                     <relocations>
@@ -400,10 +376,6 @@
                             <pattern>com.esotericsoftware.reflectasm</pattern>
                             <shadedPattern>com.alibaba.smart.framework.engine.shaded.com.esotericsoftware.reflectasm
                             </shadedPattern>
-                        </relocation>
-                        <relocation>
-                            <pattern>org.mvel2</pattern>
-                            <shadedPattern>com.alibaba.smart.framework.engine.org.mvel2</shadedPattern>
                         </relocation>
                     </relocations>
 
@@ -549,4 +521,16 @@
         </profile>
     </profiles>
 
+    <distributionManagement>
+        <repository>
+            <id>maven-207</id>
+            <name>nascent-releases</name>
+            <url>https://maven.nascent.cn/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-207</id>
+            <name>nascent-snapshots</name>
+            <url>https://maven.nascent.cn/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

@@ -11,8 +11,9 @@
     <name>Smart Engine Core</name>
     <dependencies>
         <dependency>
-            <groupId>org.mvel</groupId>
-            <artifactId>mvel2</artifactId>
+            <groupId>com.alibaba</groupId>
+            <artifactId>QLExpress</artifactId>
+            <version>3.2.7</version>
         </dependency>
 
         <dependency>

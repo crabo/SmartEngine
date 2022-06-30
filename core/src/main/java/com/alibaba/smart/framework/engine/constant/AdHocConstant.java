@@ -14,5 +14,5 @@ public   interface  AdHocConstant {
 
    String DISAGREE = "disagree";
 
-   String MVEL= "mvel";
+   String QL_EXPRESS= "qlexpress";
 }

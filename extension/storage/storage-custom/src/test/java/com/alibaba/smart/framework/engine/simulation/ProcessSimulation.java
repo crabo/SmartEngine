@@ -11,7 +11,7 @@ import com.alibaba.smart.framework.engine.bpmn.assembly.gateway.AbstractGateway;
 import com.alibaba.smart.framework.engine.bpmn.assembly.gateway.ExclusiveGateway;
 import com.alibaba.smart.framework.engine.bpmn.assembly.gateway.ParallelGateway;
 import com.alibaba.smart.framework.engine.bpmn.assembly.process.SequenceFlow;
-import com.alibaba.smart.framework.engine.common.expression.evaluator.MvelExpressionEvaluator;
+import com.alibaba.smart.framework.engine.common.expression.evaluator.QlExpressEvaluator;
 import com.alibaba.smart.framework.engine.deployment.ProcessDefinitionContainer;
 import com.alibaba.smart.framework.engine.exception.EngineException;
 import com.alibaba.smart.framework.engine.extension.constant.ExtensionConstant;
@@ -30,7 +30,7 @@ public class ProcessSimulation {
 
     private SmartEngine smartEngine;
 
-    private MvelExpressionEvaluator mvelExpressionEvaluator = new MvelExpressionEvaluator();
+    private QlExpressEvaluator mvelExpressionEvaluator = new QlExpressEvaluator();
 
     public ProcessSimulation(SmartEngine smartEngine) {
         this.smartEngine = smartEngine;
